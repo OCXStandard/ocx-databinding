@@ -2,7 +2,7 @@
 from  ocx_versioning import xsdata_package
 
 def main():
-    xsdata_package.insert_package_name()
+    xsdata_package.cli()
 
 if __name__ == "__main__":
     main()
