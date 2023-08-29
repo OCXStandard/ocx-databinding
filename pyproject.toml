@@ -102,5 +102,9 @@ src = "./ocx_versioning/__init__.py"
 # Or run some commands after the git tag and the branch
 # have been pushed:
 [[tool.tbump.after_push]]
+name = "build"
+cmd = "poetry build"
+
+[[tool.tbump.after_push]]
 name = "publish"
-cmd = "poetry publish --user"
+cmd = "poetry publish --user 3docx"
