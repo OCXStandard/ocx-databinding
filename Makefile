@@ -38,6 +38,14 @@ publish:   ## Build the package dist with poetry
 	@poetry publish --username=$(PYPI_USER) --password=$(PSWD)
 .PHONY: publish
 
+# TESTS #######################################################################
+
+FAILURES := .pytest_cache/pytest/v/cache/lastfailed
+
+
+test:  ## Run unit and integration tests
+	@pytest --durations=5  --cov-report html --cov ocx_versioning .
+.PHONY: test
 
 # HELP ########################################################################
 

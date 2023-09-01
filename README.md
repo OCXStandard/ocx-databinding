@@ -1,10 +1,10 @@
-# ocx-versioning
-Utility python scripts for managing OCX xsdata databinding versioning according to PEP 440.
-See [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on python xml databindings.
+# ocx-databinding
+CLI python script for managing OCX schema databinding and versioning according to PEP 440.
+See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on the python databindings.
 
 ## Installation
 
-    pip install ocx_versioning
+    pip install ocx_databinding
 
 ## Usage
     > python -m ocx_versioning --help

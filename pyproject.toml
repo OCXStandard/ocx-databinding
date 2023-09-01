@@ -23,6 +23,8 @@ xsdata = "*"
 click ="*"
 lxml = "*"
 soap = "*"
+typer = "*"
+loguru = "*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
@@ -77,7 +79,7 @@ src = "./ocx_versioning/__init__.py"
 
 #[[tool.tbump.before_commit]]
 #name = "Insert new xsdata package name"
-#cmd = "python xsdata_package.py {new_version}"
+#cmd = "python generator.py {new_version}"
 #
 ##[[tool.tbump.before_commit]]
 ##name = "Cd to ./ocx"
@@ -107,4 +109,4 @@ cmd = "poetry build"
 
 [[tool.tbump.after_push]]
 name = "publish"
-cmd = "poetry publish --user 3docx"
+cmd = "poetry publish --username=ocastrup"
