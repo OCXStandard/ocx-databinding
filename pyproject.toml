@@ -1,6 +1,6 @@
 [project.urls]
-"Homepage" = "https://github.com/OCXStandard/ocx-versioning"
-"Bug Tracker" = "https://github.com/OCXStandard/ocx-versioning/issues"
+"Homepage" = "https://github.com/OCXStandard/ocx-generator"
+"Bug Tracker" = "https://github.com/OCXStandard/ocx-generator/issues"
 
 
 [build-system]
@@ -8,12 +8,12 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "ocx_versioning"
+name = "ocx_generator"
 version = "1.0.0"
-description = "Utility python scripts for managing OCX schema versioning according to PEP 440"
+description = "Python CLI for managing OCX schema databinding and versioning according to PEP 440."
 authors = ["ocastrup <ole.christian.astrup@dnv.com>"]
 readme = "README.md"
-packages = [{include = "ocx_versioning"}]
+packages = [{include = "ocx_generator"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -28,12 +28,13 @@ loguru = "*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
+pytest-cov = "*"
 pytest-regressions ="*"
 
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:
-github_url = "https://github.com/OCXStandard/ocx-versioning"
+github_url = "https://github.com/OCXStandard/ocx-generator"
 
 [tool.tbump.version]
 current = "1.0.0"
@@ -71,7 +72,7 @@ tag_template = "v{new_version}"
 src = "pyproject.toml"
 
 [[tool.tbump.file]]
-src = "./ocx_versioning/__init__.py"
+src = "./ocx_generator/__init__.py"
 
 # You can specify a list of commands to
 # run after the files have been patched

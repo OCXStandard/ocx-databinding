@@ -7,8 +7,8 @@ import typer
 from typing_extensions import Annotated
 
 # Project
-from ocx_versioning import __app_name__, __version__
-from ocx_versioning import generator
+from ocx_generator import __app_name__, __version__
+from ocx_generator import generator
 
 databinding = typer.Typer()
 

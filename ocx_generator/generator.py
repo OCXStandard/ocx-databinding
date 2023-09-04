@@ -29,8 +29,8 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
 
     Example:
 
-           >>> import ocx_databinding
-           >>> ocx_generate.generate('unitsMLSchema.lite.xsd', version='0.9.18', config_file='xsdata.xml', stdout=False, recursive=False)
+           >>> import ocx_generator.generator as generator
+           >>> generator.generate('unitsMLSchema.lite.xsd', version='0.9.18', config_file='xsdata.xml', stdout=False, recursive=False)
             Updating the configuration file xsdata.xml in module ocx
             New package name is ocx_100 with version: 1.0.0
 
@@ -38,7 +38,6 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
     package_folder = Path.cwd() / Path(package_name)
     package_folder.mkdir(parents=True, exist_ok=True)
     source_url = Path(source).resolve()
-    return_code = 0
     try:
         v= parse(version)
         if v.is_prerelease:
@@ -59,7 +58,10 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
         config.output.docstring_style = 'Google'
         # The package name
         config.output.package = databinding
+        # Create a single package
         config.output.structure_style = 'single-package'
+        # Unnest classes
+        config.output.unnest_classes = False
         logger.info(f'New databinding package name is {databinding} with version: {version} is created in {package_folder.resolve()}')
         config_file = destination_folder / Path(config_file)
         with config_file.open("w") as fp:
@@ -78,6 +80,3 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
     except packaging.version.InvalidVersion as e:
         print(e)
         return False
-
-if __name__ == "__main__":
-    config()

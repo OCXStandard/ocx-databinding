@@ -5,8 +5,8 @@ import warnings, sys
 # Third party imports
 from loguru import logger
 # Module imports
-from  ocx_versioning.cli import databinding
-from ocx_versioning.utils.logging import LoguruHandler, showwarning
+from  ocx_generator.cli import databinding
+from ocx_generator.utils.logging import LoguruHandler, showwarning
 
 
 # Logging config for application
@@ -30,6 +30,6 @@ def main():
     databinding()
 
 if __name__ == "__main__":
-    logger.enable('ocx_versioning')
+    logger.enable('ocx_generator')
     handler.emit_warnings()
     main()

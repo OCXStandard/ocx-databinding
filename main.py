@@ -4,7 +4,7 @@ import sys
 from typing import Any
 from loguru import logger
 
-from  ocx_versioning.cli import generator
+from  ocx_generator.cli import generator
 
 config = {
     "handlers": [
@@ -15,8 +15,8 @@ config = {
 
 
 def main(**kwargs: Any):
-    kwargs =  {'source': 'test/data/unitsMLSchema_lite.xsd',
-    'destination': 'test/data',
+    kwargs =  {'source': 'tests/data/unitsMLSchema_lite.xsd',
+    'destination': 'tests/data',
     'package': 'unitsml',
     'print': False,
     'recursive': False,
@@ -36,5 +36,5 @@ def main(**kwargs: Any):
 
 
 if __name__ == "__main__":
-    logger.enable('ocx_versioning')
+    logger.enable('ocx_generator')
     main()

@@ -1,9 +1,8 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
 
-import subprocess
 from typer.testing import CliRunner
-from ocx_versioning.cli import databinding
-from ocx_versioning import __version__
+from ocx_generator.cli import databinding
+from ocx_generator import __version__
 
 def test_version():
     """Test ouput of cli version."""

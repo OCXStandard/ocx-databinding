@@ -1,6 +1,6 @@
 # Minimal conda environment with python, pip and poetry and windows Make file support.
 # Dependencies are managed by Poetry
-name: versioning
+name: generator
 channels:
   - conda-forge
   - msys2 # for m2-grep

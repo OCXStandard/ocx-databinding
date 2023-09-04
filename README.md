@@ -4,11 +4,11 @@ See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for 
 
 ## Installation
 
-    pip install ocx_databinding
+    pip install ocx_generator
 
 ## Usage
     > python -m ocx_versioning --help
-    Usage: ocx_versioning "module_name" "version_string"
+    Usage: ocx_generator "module_name" "version_string"
     
     --help: Prints this message and exits.
     --version: Prints the version number and exits.
