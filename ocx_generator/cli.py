@@ -2,9 +2,12 @@
 """Script entry point."""
 # System imports
 from __future__ import annotations
+import sys, warnings
 # Third party
 import typer
 from typing_extensions import Annotated
+from loguru import logger
+from ocx_generator.utils.logging import LoguruHandler
 
 # Project
 from ocx_generator import __app_name__, __version__
@@ -14,7 +17,25 @@ databinding = typer.Typer()
 
 CONFIG_FILE = 'xsdata.xml'
 
-# The new package version
+logger.enable('ocx_generator')
+
+# Logging config for application
+config = {
+    "handlers": [
+        {"sink": sys.stdout, "format": "{time} - {message}"},
+        {"sink": str.join(__name__, ".log"), "serialize": True},
+    ],
+}
+
+# Connect xsdata logger to loguru
+# handler = LoguruHandler()
+# logger.add(handler)
+
+
+# Log warnings as well
+# showwarning_ = warnings.showwarning
+
+# handler.emit_warnings()
 
 
 @databinding.command()

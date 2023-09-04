@@ -5,7 +5,7 @@ import sys
 import logging
 from loguru import logger
 from xsdata.utils.click import LogHandler
-
+logger.disable(__name__)
 
 # Log warnings as well
 showwarning_ = warnings.showwarning

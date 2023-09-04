@@ -110,4 +110,4 @@ cmd = "poetry build"
 
 [[tool.tbump.after_push]]
 name = "publish"
-cmd = "poetry publish --username=ocastrup"
+cmd = "echo Rememeber to bublish new build"

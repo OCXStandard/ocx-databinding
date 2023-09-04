@@ -37,7 +37,6 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
     """
     package_folder = Path.cwd() / Path(package_name)
     package_folder.mkdir(parents=True, exist_ok=True)
-    source_url = Path(source).resolve()
     try:
         v= parse(version)
         if v.is_prerelease:
@@ -67,7 +66,7 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
         with config_file.open("w") as fp:
             config.write(fp, config)
         try:
-            return_code = subprocess.call(f'xsdata generate {source_url} -c {config_file.resolve()} ',
+            return_code = subprocess.call(f'xsdata generate {source} -c {config_file.resolve()} ',
                                     shell=True, cwd=destination_folder.resolve(),
                                           #stdout=PIPE
                                           )

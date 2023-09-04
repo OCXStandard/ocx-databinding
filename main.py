@@ -15,13 +15,12 @@ config = {
 
 
 def main(**kwargs: Any):
-    kwargs =  {'source': 'tests/data/unitsMLSchema_lite.xsd',
-    'destination': 'tests/data',
+    kwargs =  {'source': 'https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd',
     'package': 'unitsml',
+    'version': '0.9.18',
     'print': False,
     'recursive': False,
     'config': 'xsdata.xml',
-    'version': '0.9.18'
     }
     try:
         source = kwargs.pop("source")
