@@ -16,7 +16,7 @@ config = {
 
 def main(**kwargs: Any):
     kwargs =  {'source': 'https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd',
-    'package': 'unitsml',
+    'package': 'ocx_unitsml',
     'version': '0.9.18',
     'print': False,
     'recursive': False,

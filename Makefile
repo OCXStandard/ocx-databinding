@@ -32,12 +32,33 @@ check:
 	@echo {$PSWD}
 .PHONY: check
 
+# DOCUMENTATION ##############################################################
+SPHINXBUILD = sphinx-build -E -b html docs dist/docs
+COVDIR = "htmlcov"
+
+doc-serve: ## Open the the html docs built by Sphinx
+	@cmd /c start "_build/index.html"
+
+ds: doc-serve
+.PHINY: ds
+
+
+doc: ## Build the html docs using Sphinx. For other Sphinx options, run make in the docs folder
+	@sphinx-build docs _build
+PHONY: doc
+
+doc-links: ## Check the internal and external links after building the documentation
+	@sphinx-build docs -W -b linkcheck -d _build/doctrees _build/html
+PHONY: doc-links
 # BUILD ########################################################################
 build:   ## Build the package dist with poetry
 	@poetry update
 	@poetry build
 .PHONY: build
 
+poetry-fix:  ## Force pip poetry re-installation
+	@pip install poetry --upgrade
+.PHONY: poetry-fix
 publish:   ## Publish the package dist with poetry
 	@poetry publish --username=$(PYPI_USER) --password=$(PSWD)
 .PHONY: publish
@@ -46,6 +67,8 @@ publish:   ## Publish the package dist with poetry
 .PHONY: poetry-fix ## In case poetry fails, update the package with this command
 	@pip install poetry --upgrade
 
+install: ## Install current project in editable mode in the conda environment
+	@python -m pip install .
 # TESTS #######################################################################
 
 FAILURES := .pytest_cache/pytest/v/cache/lastfailed

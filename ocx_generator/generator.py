@@ -17,15 +17,18 @@ from xsdata.models.config import GeneratorConfig
 # Project imports
 
 def generate(source, package_name:str, version: str, config_file: str, stdout:bool = False, recursive:bool=True)->bool:
-    """ Generate code from xml schemas, webservice definitions and any xml or json document, see  https://xsdata.readthedocs.io/en/latest/
+    """ Generate code from xml schemas, webservice definitions and any xml or json document.
+
+    See  https://xsdata.readthedocs.io/en/latest/
         The input source can be either a filepath, uri or a directory containing  xml, json, xsd and wsdl files.
         If the config file xsdata.xml does not exist, it will be created with the following values set:
 
-       Arguments:
-            package_name: The name of the pypi package. A folder with the name of the package wil be created and the databinding will be generated here.
-            version: The version from the source schema
-            config_file: name of config file. Default: xsdata.xml. Will be created in the  package folder
-            recursive:  Search files recursively in the source directory
+    Args:
+
+        package_name: The name of the pypi package. A folder with the name of the package wil be created and the databinding will be generated here.
+        version: The version from the source schema
+        config_file: name of config file. Default: xsdata.xml. Will be created in the  package folder
+        recursive:  Search files recursively in the source directory
 
     Example:
 
@@ -35,6 +38,8 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
             New package name is ocx_100 with version: 1.0.0
 
     """
+    if 'http' not in source:
+        source = Path(source).resolve()
     package_folder = Path.cwd() / Path(package_name)
     package_folder.mkdir(parents=True, exist_ok=True)
     try:
@@ -66,6 +71,9 @@ def generate(source, package_name:str, version: str, config_file: str, stdout:bo
         with config_file.open("w") as fp:
             config.write(fp, config)
         try:
+            logger.debug(
+                f'Calling xsdata subprocess with parameters: xsdata generate {source} -c {config_file.resolve()}')
+            logger.debug(f'./Process executes in: {destination_folder.resolve()}')
             return_code = subprocess.call(f'xsdata generate {source} -c {config_file.resolve()} ',
                                     shell=True, cwd=destination_folder.resolve(),
                                           #stdout=PIPE

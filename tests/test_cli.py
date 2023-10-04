@@ -8,7 +8,7 @@ def test_version():
     """Test ouput of cli version."""
     runner = CliRunner()
     result = runner.invoke(databinding, ['version'])
-    assert str(result.output).find(__version__) != -1
+    assert __version__ in str(result.output)
 
 def test_help():
     """Test help output."""

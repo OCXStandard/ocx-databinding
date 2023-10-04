@@ -26,11 +26,23 @@ soap = "*"
 typer = "*"
 loguru = "*"
 
+[tool.poetry.group.development.dependencies]
+pre-commit = "*"
+
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 pytest-cov = "*"
 pytest-regressions ="*"
 
+[tool.poetry.group.docs.dependencies]
+sphinx = "*"
+sphinx-autodoc-typehints = "*"
+sphinx_rtd_theme = "*"
+sphinx-click = "*"
+sphinx_automodapi = "*"
+
+[tool.project.scripts]
+generator = "ocx_generator.__main__:main"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:
@@ -110,4 +122,4 @@ cmd = "poetry build"
 
 [[tool.tbump.after_push]]
 name = "publish"
-cmd = "echo Rememeber to bublish new build"
+cmd = "echo Rememeber to publish new build"

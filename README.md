@@ -1,4 +1,5 @@
-# ocx-databinding
+[]
+# ocx-generator
 CLI python script for managing OCX schema databinding and versioning according to PEP 440.
 See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on the python databindings.
 
@@ -20,7 +21,26 @@ See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for 
       generate  Generate code from xml schemas, webservice definitions and...
       version   Print the version number and exit.
     
-Generate the databindings from the unitsML schema:
+    python -m ocx_generator generate --help
+    Usage: python -m ocx_generator generate [OPTIONS] SOURCE PACKAGE VERSION
+    
+      Generate code from xml schemas, webservice definitions and any xml or json
+      document. The input source can be either a filepath, uri or a directory
+      containing  xml, json, xsd and wsdl files
+    
+    Arguments:
+      SOURCE   [required]
+      PACKAGE  [required]
+      VERSION  [required]
+    
+    Options:
+      --config TEXT                 [default: xsdata.xml]
+      --stdout / --no-stdout        [default: no-stdout]
+      --recursive / --no-recursive  [default: no-recursive]
+      --help                        Show this message and exit.
+
+## Example    
+Generate the databindings from the unitsML schema url:
 
     python -m ocx_generator generate https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd unitsml 0.9.18
 
@@ -38,13 +58,13 @@ Generate the databindings from the unitsML schema:
     Generating package: init
     Generating package: unitsml_0918
 
-This has now generated a subdirectory ``unitsml``  the following structure
+This has now generated a subdirectory ``unitsml``  with the following structure
 
 
     C:. 
     └───unitsml                                
         └───unitsml_0918     
-and content:
+and with the content:
 
        Length Name
        ------ ----
