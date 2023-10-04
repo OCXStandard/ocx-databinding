@@ -1,5 +1,5 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
-"""Script entry point."""
+"""generator CLI commands."""
 # System imports
 from __future__ import annotations
 import sys
@@ -56,7 +56,7 @@ def generate(
     ] = False,
 ):
     """Generate code from xml schemas, webservice definitions and any xml or json document.
-    The input source can be either a filepath, uri or a directory containing  xml, json, xsd and wsdl files
+    The input source can be either a filepath, uri or a directory containing  xml, json, xsd and wsdl files.
     """
     return generator.generate(source, package, version, config, stdout, recursive)
 
@@ -65,3 +65,8 @@ def generate(
 def version():
     """Print the version number and exit."""
     print(__version__)
+
+
+def main():
+    """CLI entry point."""
+    databinding()

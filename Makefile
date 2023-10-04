@@ -4,8 +4,6 @@
 
 SOURCEDIR = ./ocx_generator
 CONDA_ENV = generator
-PYPI_USER = $(env:PYPI_USER)
-PSWD = $(env:PYPI_PSWD)
 
 # PROJECT setup using conda and powershell
 .PHONY: conda-create
@@ -42,7 +40,6 @@ doc-serve: ## Open the the html docs built by Sphinx
 ds: doc-serve
 .PHINY: ds
 
-
 doc: ## Build the html docs using Sphinx. For other Sphinx options, run make in the docs folder
 	@sphinx-build docs _build
 PHONY: doc
@@ -50,7 +47,7 @@ PHONY: doc
 doc-links: ## Check the internal and external links after building the documentation
 	@sphinx-build docs -W -b linkcheck -d _build/doctrees _build/html
 PHONY: doc-links
-# BUILD ########################################################################
+# POETRY ########################################################################
 build:   ## Build the package dist with poetry
 	@poetry update
 	@poetry build
@@ -59,17 +56,15 @@ build:   ## Build the package dist with poetry
 poetry-fix:  ## Force pip poetry re-installation
 	@pip install poetry --upgrade
 .PHONY: poetry-fix
+
 export:   ## Export the dependencies to docs/requirements.txt
 	@poetry export --with=docs -o ./docs/requirements.txt
 .PHONY: publish
 
-# Poetry fix
-.PHONY: poetry-fix ## In case poetry fails, update the package with this command
-	@pip install poetry --upgrade
-
-install: ## Install current project in editable mode in the conda environment
-	@python -m pip install .
-
+# Poetry run CLI
+poetry-run:  ## Run the CLI
+	@poetry run  databinding
+.PHONY: poetry-run
 # pre-commit ######################################################################
 pre-commit:	## Run any pre-commit hooks
 	@pre-commit run --all-files

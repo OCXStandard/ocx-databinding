@@ -9,7 +9,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ocx_generator"
-version = "2.2.0"
+version = "2.3.0"
 description = "Python CLI for managing OCX schema databinding and versioning according to PEP 440."
 authors = ["ocastrup <ole.christian.astrup@dnv.com>"]
 readme = "README.md"
@@ -25,7 +25,6 @@ lxml = "*"
 soap = "*"
 typer = "*"
 loguru = "*"
-sphinx = "<=6.2.1"
 
 [tool.poetry.group.development.dependencies]
 pre-commit = "*"
@@ -42,15 +41,15 @@ sphinx_rtd_theme = "*"
 sphinx-click = "*"
 sphinx_automodapi = "*"
 
-[tool.project.scripts]
-generator = "ocx_generator.__main__:main"
+[tool.poetry.scripts]
+databinding = "ocx_generator.cli:main"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:
 github_url = "https://github.com/OCXStandard/ocx-generator"
 
 [tool.tbump.version]
-current = "2.2.0"
+current = "2.3.0"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before

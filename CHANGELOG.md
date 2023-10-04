@@ -1,5 +1,10 @@
 # ocx-generator: Changelog
 
+## 2.3.0 2023.10.05
+ [Release v2.3.0](https://github.com/OCXStandard/ocx-generator/releases/tag/v2.3.0)
+
+Add script (CLI) entrypoint to build
+
 ## 2.2.0 2023.10.04
  [Release v2.2.0](https://github.com/OCXStandard/ocx-generator/releases/tag/v2.2.0)
 ### Changes
