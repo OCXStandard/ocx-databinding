@@ -72,3 +72,7 @@ and with the content:
         29577 unitsml_0918.py
          2145 xsdata.xml
          1531 __init__.py
+
+## API documentation
+
+[API](https://ocxstandard.github.io/ocx-generator/)

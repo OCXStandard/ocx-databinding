@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/ocx-schema-reader  # Replace <package-name> with your PyPI project name
+      url: https://pypi.org/p/ocx-generator  # Replace <package-name> with your PyPI project name
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
     steps:
@@ -62,4 +62,4 @@ jobs:
     - name: Publish distribution 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        password: ${{ secrets.PYPI_API_TOKEN_OCX_SCHEMA_PARSER }}
+        password: ${{ secrets.PYPI_API_TOKEN_OCX_GENERATOR }}
