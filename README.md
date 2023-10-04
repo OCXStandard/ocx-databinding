@@ -1,4 +1,3 @@
-[]
 # ocx-generator
 CLI python script for managing OCX schema databinding and versioning according to PEP 440.
 See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on the python databindings.
@@ -6,6 +5,8 @@ See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for 
 ## Installation
 
     pip install ocx_generator
+## Changes
+[CHANGELOG](CHANGELOG.md)
 
 ## Usage
     python -m ocx_generator --help

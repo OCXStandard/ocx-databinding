@@ -59,8 +59,8 @@ build:   ## Build the package dist with poetry
 poetry-fix:  ## Force pip poetry re-installation
 	@pip install poetry --upgrade
 .PHONY: poetry-fix
-publish:   ## Publish the package dist with poetry
-	@poetry publish --username=$(PYPI_USER) --password=$(PSWD)
+export:   ## Export the dependencies to docs/requirements.txt
+	@poetry export --with=docs -o ./docs/requirements.txt
 .PHONY: publish
 
 # Poetry fix
