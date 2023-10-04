@@ -13,4 +13,3 @@
 ## 1.0.0 2023.09.04
 [Release v.1.0.0](https://github.com/OCXStandard/ocx-generator/releases/tag/v1.0.0)
 2. First commit
- 

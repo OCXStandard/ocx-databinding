@@ -4,7 +4,7 @@ import sys
 from typing import Any
 from loguru import logger
 
-from  ocx_generator.cli import generator
+from ocx_generator.cli import generator
 
 config = {
     "handlers": [
@@ -15,12 +15,13 @@ config = {
 
 
 def main(**kwargs: Any):
-    kwargs =  {'source': 'https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd',
-    'package': 'ocx_unitsml',
-    'version': '0.9.18',
-    'print': False,
-    'recursive': False,
-    'config': 'xsdata.xml',
+    kwargs = {
+        "source": "https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd",
+        "package": "ocx_unitsml",
+        "version": "0.9.18",
+        "print": False,
+        "recursive": False,
+        "config": "xsdata.xml",
     }
     try:
         source = kwargs.pop("source")
@@ -31,9 +32,9 @@ def main(**kwargs: Any):
         version = kwargs.pop("version")
         generator.generate(source, package, version, config, stdout, recursive)
     except KeyError as e:
-        print(f'Missing option: {e}')
+        print(f"Missing option: {e}")
 
 
 if __name__ == "__main__":
-    logger.enable('ocx_generator')
+    logger.enable("ocx_generator")
     main()

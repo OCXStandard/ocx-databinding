@@ -69,6 +69,11 @@ publish:   ## Publish the package dist with poetry
 
 install: ## Install current project in editable mode in the conda environment
 	@python -m pip install .
+
+# pre-commit ######################################################################
+pre-commit:	## Run any pre-commit hooks
+	@pre-commit run --all-files
+
 # TESTS #######################################################################
 
 FAILURES := .pytest_cache/pytest/v/cache/lastfailed
@@ -93,6 +98,3 @@ help: ## Show this help
 .DEFAULT_GOAL := help
 
 #-----------------------------------------------------------------------------------------------
-
-
-

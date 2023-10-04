@@ -3,7 +3,7 @@ ignore = E231, E241, W503, C901
 extend-ignore = E203
 per-file-ignores =
     __init__.py:F401
-max-line-length = 120
+max-line-length = 160
 count = true
 exclude =
     # No need to traverse our git directory
