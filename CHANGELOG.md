@@ -1,5 +1,12 @@
 # ocx-generator: Changelog
 
+## 2.5.0 2023.10.05
+ [Release v2.5.0](https://github.com/OCXStandard/ocx-generator/releases/tag/v2.5.0)
+
+### Changes
+ - Package renamed to ocx_databinding
+ - Remove imports from the generated modules
+
 ## 2.3.0 2023.10.05
  [Release v2.3.0](https://github.com/OCXStandard/ocx-generator/releases/tag/v2.3.0)
 
