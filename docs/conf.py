@@ -29,7 +29,7 @@ extensions = [
 ]
 source_suffix = ".rst"
 master_doc = "index"
-project = "ocx_generator"
+project = "ocx_databinding"
 year = "2023"
 author = "3Docx.org"
 copyright = "{0}, {1}".format(year, author)

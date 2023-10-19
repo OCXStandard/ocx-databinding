@@ -1,7 +1,7 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
 
-from ocx_generator import generator
-from ocx_generator.cli import CONFIG_FILE
+from ocx_databinding import generator
+from ocx_databinding.cli import CONFIG_FILE
 
 
 def test_generate(shared_datadir):

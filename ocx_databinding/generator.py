@@ -4,7 +4,6 @@
 from pathlib import Path
 import subprocess
 
-
 # Third party packages
 from loguru import logger
 import packaging.version
@@ -16,13 +15,22 @@ from xsdata.models.config import GeneratorConfig
 # Project imports
 
 
+def remove_module_imports(init_py: Path):
+    """Remove module imports."""
+
+    content = init_py.read_text()
+    start = content.find('__all__')  # __all__  comes after the import statements
+    all_types = content[start:]
+    init_py.write_text(all_types)
+
+
 def generate(
-    source,
-    package_name: str,
-    version: str,
-    config_file: str,
-    stdout: bool = False,
-    recursive: bool = True,
+        source,
+        package_name: str,
+        version: str,
+        config_file: str,
+        stdout: bool = False,
+        recursive: bool = True,
 ) -> bool:
     """Generate code from xml schemas, webservice definitions and any xml or json document.
 
@@ -39,8 +47,8 @@ def generate(
 
     Example:
 
-           >>> import ocx_generator.generator as generator
-           >>> generator.generate('https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd', version='0.9.18', config_file='xsdata.xml')
+           >>> import ocx_databinding.generator as databinding
+           >>> databinding.generate('https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd', version='0.9.18', config_file='xsdata.xml')
                ========= xsdata v23.8 / Python 3.11.5 / Platform win32 =========
                 Parsing schema https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd
                 Parsing schema file:///C:/miniconda3/envs/generator/Lib/site-packages/xsdata/schemas/xml.xsd
@@ -66,12 +74,6 @@ def generate(
             databinding = f"{package_name}_{v.major}{v.minor}{v.micro}"
         destination_folder = package_folder / Path(databinding)
         destination_folder.mkdir(parents=True, exist_ok=True)
-        # os.chdir(str(destination_folder.resolve()))
-        # if config_file.exists():
-        #     config = GeneratorConfig.read(config_file.resolve())
-        #     logger.info(f'Updating the configuration file {config_file} in module {destination_folder}')
-        # else:
-        #     logger.info(f'Initializing configuration file {config_file.resolve()}')
         config = GeneratorConfig.create()
         # OCX databindings defaults
         config.output.docstring_style = "Google"
@@ -97,14 +99,17 @@ def generate(
                 f"xsdata generate {source} -c {config_file.resolve()} ",
                 shell=True,
                 cwd=destination_folder.resolve(),
-                # stdout=PIPE
             )
             if return_code != 0:
                 logger.error(f"xsdata generate failed with return code {return_code}")
+                return False
+            # Modify init.py to avoid circular reports
+            init_py = destination_folder / '__init__.py'
+            remove_module_imports(init_py)
             return True
         except xsdata.exceptions.CodeGenerationError as e:
             logger.error(f"xsdata generate failed:  {e}")
             return False
     except packaging.version.InvalidVersion as e:
-        print(e)
+        logger.error(e)
         return False

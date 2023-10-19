@@ -12,14 +12,14 @@ from loguru import logger
 
 
 # Project
-from ocx_generator import __version__
-from ocx_generator import generator
+from ocx_databinding import __version__
+from ocx_databinding import generator
 
 databinding = typer.Typer()
 
 CONFIG_FILE = "xsdata.xml"
 
-logger.enable("ocx_generator")
+logger.enable("ocx_databinding")
 
 # Logging config for application
 config = {
