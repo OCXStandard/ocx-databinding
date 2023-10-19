@@ -9,7 +9,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ocx_generator"
-version = "2.4.0"
+version = "2.5.0"
 description = "Python CLI for managing OCX schema databinding and versioning according to PEP 440."
 authors = ["ocastrup <ole.christian.astrup@dnv.com>"]
 readme = "README.md"
@@ -50,7 +50,7 @@ databinding = "ocx_generator.cli:main"
 github_url = "https://github.com/OCXStandard/ocx-generator"
 
 [tool.tbump.version]
-current = "2.4.0"
+current = "2.5.0"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before
