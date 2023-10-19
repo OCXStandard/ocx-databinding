@@ -1,6 +1,6 @@
 [project.urls]
-"Homepage" = "https://github.com/OCXStandard/ocx-generator"
-"Bug Tracker" = "https://github.com/OCXStandard/ocx-generator/issues"
+"Homepage" = "https://github.com/OCXStandard/ocx-databinding"
+"Bug Tracker" = "https://github.com/OCXStandard/ocx-databinding/issues"
 
 
 [build-system]
@@ -8,12 +8,12 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "ocx_generator"
+name = "ocx_databinding"
 version = "2.4.0"
 description = "Python CLI for managing OCX schema databinding and versioning according to PEP 440."
 authors = ["ocastrup <ole.christian.astrup@dnv.com>"]
 readme = "README.md"
-packages = [{include = "ocx_generator"}]
+packages = [{include = "ocx_databinding"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -43,11 +43,11 @@ sphinx-click = "*"
 sphinx_automodapi = "*"
 
 [tool.poetry.scripts]
-databinding = "ocx_generator.cli:main"
+databinding = "ocx_databinding.cli:main"
 
 [tool.tbump]
 # Uncomment this if your project is hosted on GitHub:
-github_url = "https://github.com/OCXStandard/ocx-generator"
+github_url = "https://github.com/OCXStandard/ocx-databinding"
 
 [tool.tbump.version]
 current = "2.4.0"
@@ -85,7 +85,7 @@ tag_template = "v{new_version}"
 src = "pyproject.toml"
 
 [[tool.tbump.file]]
-src = "./ocx_generator/__init__.py"
+src = "./ocx_databinding/__init__.py"
 
 [[tool.tbump.file]]
 src = "./docs/conf.py"

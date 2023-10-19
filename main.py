@@ -4,7 +4,7 @@ import sys
 from typing import Any
 from loguru import logger
 
-from ocx_generator.cli import generator
+from ocx_databinding.cli import generator
 
 config = {
     "handlers": [
@@ -36,5 +36,5 @@ def main(**kwargs: Any):
 
 
 if __name__ == "__main__":
-    logger.enable("ocx_generator")
+    logger.enable("ocx_databinding")
     main()

@@ -2,8 +2,8 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 
-SOURCEDIR = ./ocx_generator
-CONDA_ENV = generator
+SOURCEDIR = ./ocx_databinding
+CONDA_ENV = databinding
 
 # PROJECT setup using conda and powershell
 .PHONY: conda-create
@@ -75,7 +75,7 @@ FAILURES := .pytest_cache/pytest/v/cache/lastfailed
 
 
 test:  ## Run unit and integration tests
-	@pytest --durations=5  --cov-report html --cov ocx_generator .
+	@pytest --durations=5  --cov-report html --cov ${source_dir} .
 .PHONY: test
 
 test-cov:  ## View the test coverage report
