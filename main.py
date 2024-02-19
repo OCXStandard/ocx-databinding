@@ -4,37 +4,45 @@ import sys
 from typing import Any
 from loguru import logger
 
-from ocx_generator.cli import generator
+from ocx_databinding.cli import generator
 
 config = {
     "handlers": [
         {"sink": sys.stdout, "format": "{time} - {message}"},
-        {"sink": str.join(__name__, "log"), "serialize": True},
+        {"sink": str.join(__name__, "log"), "serialize": False},
     ],
 }
 
 
 def main(**kwargs: Any):
     kwargs = {
-        "source": "https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd",
-        "package": "ocx_unitsml",
-        "version": "0.9.18",
+        # "source": "https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd",
+        "source": "https://3docx.org/fileadmin//ocx_schema//V300b7//OCX_Schema.xsd",
+        "package": "ocx",
+        "version": "3.0.0b7",
         "print": False,
         "recursive": False,
-        "config": "xsdata.xml",
+        "slots": True,
     }
     try:
         source = kwargs.pop("source")
         package = kwargs.pop("package")
         stdout = kwargs.pop("print")
         recursive = kwargs.pop("recursive")
-        config = kwargs.pop("config")
         version = kwargs.pop("version")
-        generator.generate(source, package, version, config, stdout, recursive)
+        slots = kwargs.pop("slots")
+        generator.call_xsdata(
+            source=source,
+            package_name=package,
+            version=version,
+            stdout=stdout,
+            recursive=recursive,
+            slots=slots,
+        )
     except KeyError as e:
         print(f"Missing option: {e}")
 
 
 if __name__ == "__main__":
-    logger.enable("ocx_generator")
+    logger.enable("ocx_databinding")
     main()

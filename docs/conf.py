@@ -29,11 +29,11 @@ extensions = [
 ]
 source_suffix = ".rst"
 master_doc = "index"
-project = "ocx_generator"
+project = "ocx_databinding"
 year = "2023"
 author = "3Docx.org"
 copyright = "{0}, {1}".format(year, author)
-version = "2.4.0"
+version = "2.5.0"
 release = version
 pygments_style = "trac"
 templates_path = ["_templates"]

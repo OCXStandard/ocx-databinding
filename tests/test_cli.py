@@ -1,8 +1,8 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
 
 from typer.testing import CliRunner
-from ocx_generator.cli import databinding
-from ocx_generator import __version__
+from ocx_databinding.cli import databinding
+from ocx_databinding import __version__
 
 
 def test_version():

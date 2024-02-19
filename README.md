@@ -1,10 +1,10 @@
-# ocx-generator
+# ocx-databinding
 CLI python script for managing OCX schema databinding.
 See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on the python databindings.
 
 ## Installation
 
-    pip install ocx_generator
+    pip install ocx_databinding
 ## Changes
 [CHANGELOG](CHANGELOG.md)
 
@@ -24,21 +24,21 @@ See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for 
 
 Generate a datbinding:
 
-    databinding generate --help
-    Usage: databinding generate [OPTIONS] SOURCE PACKAGE VERSION
-
+    Usage: databinding generate [OPTIONS] SOURCE PACKAGE SCHEMA_VERSION
+    
       Generate code from xml schemas, webservice definitions and any xml or json
       document. The input source can be either a filepath, uri or a directory
-      containing  xml, json, xsd and wsdl files
-
+      containing  xml, json, xsd and wsdl files.
+    
     Arguments:
-      SOURCE   [required]
-      PACKAGE  [required]
-      VERSION  [required]
-
+      SOURCE          [required]
+      PACKAGE         [required]
+      SCHEMA_VERSION  [required]
+    
     Options:
-      --config TEXT                 [default: xsdata.xml]
-      --stdout / --no-stdout        [default: no-stdout]
+      --docstring-style TEXT        [default: Google]
+      --structure-style TEXT        [default: single-package]
+      --slots / --no-slots          [default: slots]
       --recursive / --no-recursive  [default: no-recursive]
       --help                        Show this message and exit.
 
@@ -47,7 +47,7 @@ Generate the databindings from the unitsML schema url:
 
     databinding generate https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd unitsml 0.9.18
 
-    2023-09-04 11:17:28.705 | INFO     | ocx_generator.generator:generate:64 - New databinding package name is unitsml_0918 with version: 0.9.18 is created in C:\PythonDev\ocx-generator\unitsml
+    2023-09-04 11:17:28.705 | INFO     | ocx_databinding.generator:generate:64 - New databinding package name is unitsml_0918 with version: 0.9.18 is created in C:\PythonDev\ocx-generator\unitsml
     ========= xsdata v23.8 / Python 3.11.5 / Platform win32 =========
 
     Parsing schema https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd
