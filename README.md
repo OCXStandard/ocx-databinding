@@ -24,21 +24,21 @@ See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for 
 
 Generate a datbinding:
 
-    databinding generate --help
-    Usage: databinding generate [OPTIONS] SOURCE PACKAGE VERSION
-
+    Usage: databinding generate [OPTIONS] SOURCE PACKAGE SCHEMA_VERSION
+    
       Generate code from xml schemas, webservice definitions and any xml or json
       document. The input source can be either a filepath, uri or a directory
-      containing  xml, json, xsd and wsdl files
-
+      containing  xml, json, xsd and wsdl files.
+    
     Arguments:
-      SOURCE   [required]
-      PACKAGE  [required]
-      VERSION  [required]
-
+      SOURCE          [required]
+      PACKAGE         [required]
+      SCHEMA_VERSION  [required]
+    
     Options:
-      --config TEXT                 [default: xsdata.xml]
-      --stdout / --no-stdout        [default: no-stdout]
+      --docstring-style TEXT        [default: Google]
+      --structure-style TEXT        [default: single-package]
+      --slots / --no-slots          [default: slots]
       --recursive / --no-recursive  [default: no-recursive]
       --help                        Show this message and exit.
 

@@ -19,8 +19,7 @@ packages = [{include = "ocx_databinding"}]
 python = "^3.11"
 packaging = "^23.1"
 tbump = '*'
-xsdata = "*"
-click ="*"
+xsdata = "23.8"
 lxml = "*"
 soap = "*"
 typer = "*"
