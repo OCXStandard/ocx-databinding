@@ -1,8 +1,14 @@
 # ocx-databinding: Changelog
 
 ## [2.6.1] - 2024.02.19
+Bump to version [2.6.2](https://github.com/OCXStandard/ocx-databinding/tree/v2.6.2)
 ### Changed
-* Upgrade github actions to latest version using NPM 20
+* Use trusted publisher in GitHub publish action
+
+
+## [2.6.1] - 2024.02.19
+### Changed
+* Upgrade GitHub actions to latest version using NPM 20
 
 ## [2.6.0] - 2024.02.19
 
