@@ -3,15 +3,15 @@ ocx_generator
 
 cli
 ***
-.. automodule:: ocx_generator.cli
+.. automodule:: ocx_databinding.cli
     :members:
 
 generator
 *********
-.. automodule:: ocx_generator.generator
+.. automodule:: ocx_databinding.generator
     :members:
 
 utils
 *****
-.. automodule:: ocx_generator.utils.logging
+.. automodule:: ocx_databinding.utils.logging
     :members:

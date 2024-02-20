@@ -1,6 +1,6 @@
 # ocx-databinding
-CLI python script for managing OCX schema databinding.
-See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on the python databindings.
+CLI python script for managing the [OCX schema](https://github.com/OCXStandard/OCX_Schema) databinding.
+See the documentation of [xsdata](https://xsdata.readthedocs.io/en/latest/) for details on creating python databindings.
 
 ## Installation
 
