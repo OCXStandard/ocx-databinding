@@ -1,6 +1,13 @@
 # ocx-databinding: Changelog
 
-## [2.6.1] - 2024.02.19
+
+## [2.6.3] - 2024.03.11
+Bump to version [2.6.3](https://github.com/OCXStandard/ocx-databinding/tree/v2.6.3)
+### Changed
+* Downgraded to Python 3.10
+
+
+## [2.6.2] - 2024.02.19
 Bump to version [2.6.2](https://github.com/OCXStandard/ocx-databinding/tree/v2.6.2)
 ### Changed
 * Use trusted publisher in GitHub publish action

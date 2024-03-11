@@ -10,8 +10,3 @@ generator
 *********
 .. automodule:: ocx_databinding.generator
     :members:
-
-utils
-*****
-.. automodule:: ocx_databinding.utils.logging
-    :members:

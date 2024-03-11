@@ -16,7 +16,7 @@ readme = "README.md"
 packages = [{include = "ocx_databinding"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 packaging = "^23.1"
 tbump = '*'
 xsdata = "23.8"
