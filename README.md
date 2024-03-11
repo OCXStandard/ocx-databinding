@@ -80,4 +80,4 @@ The databindings are also versioned by creating a package name with the version 
 
 ## API documentation
 
-[API](https://ocxstandard.github.io/ocx-generator/)
+[API](https://ocxstandard.github.io/ocx-databinding/)
