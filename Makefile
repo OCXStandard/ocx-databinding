@@ -58,7 +58,7 @@ poetry-fix:  ## Force pip poetry re-installation
 .PHONY: poetry-fix
 
 export:   ## Export the dependencies to docs/requirements.txt
-	@poetry export --with=docs -o ./docs/requirements.txt
+	@poetry export --with=docs --without-hashes -o ./docs/requirements.txt
 .PHONY: publish
 
 # Poetry run CLI
