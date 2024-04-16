@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ocx_generator &mdash; ocx_databinding 2.7.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Contents" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ocx_databinding
+          </a>
+              <div class="version">
+                2.7.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ocx_generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-ocx_databinding.cli">cli</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.cli.generate"><code class="docutils literal notranslate"><span class="pre">generate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.cli.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.cli.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-ocx_databinding.generator">generator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.generator.call_xsdata"><code class="docutils literal notranslate"><span class="pre">call_xsdata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.generator.package_version"><code class="docutils literal notranslate"><span class="pre">package_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.generator.remove_module_imports"><code class="docutils literal notranslate"><span class="pre">remove_module_imports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ocx_databinding.generator.xsdata_generate"><code class="docutils literal notranslate"><span class="pre">xsdata_generate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ocx_databinding</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ocx_generator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ocx-generator">
+<h1>ocx_generator<a class="headerlink" href="#ocx-generator" title="Permalink to this heading"></a></h1>
+<section id="module-ocx_databinding.cli">
+<span id="cli"></span><h2>cli<a class="headerlink" href="#module-ocx_databinding.cli" title="Permalink to this heading"></a></h2>
+<p>generator CLI commands.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.cli.generate">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.cli.</span></span><span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">package</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docstring_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Google'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single-package'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/cli.html#generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.cli.generate" title="Permalink to this definition"></a></dt>
+<dd><p>Generate code from xml schemas, webservice definitions and any xml or json document.
+The input source can be either a filepath, uri or a directory containing  xml, json, xsd and wsdl files.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.cli.main">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.cli.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/cli.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.cli.main" title="Permalink to this definition"></a></dt>
+<dd><p>CLI entry point.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.cli.version">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.cli.</span></span><span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/cli.html#version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.cli.version" title="Permalink to this definition"></a></dt>
+<dd><p>Print the version number and exit.</p>
+</dd></dl>
+
+</section>
+<section id="module-ocx_databinding.generator">
+<span id="generator"></span><h2>generator<a class="headerlink" href="#module-ocx_databinding.generator" title="Permalink to this heading"></a></h2>
+<p>Generate code from xml schemas, webservice definitions and any xml or json document.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.generator.call_xsdata">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.generator.</span></span><span class="sig-name descname"><span class="pre">call_xsdata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">package_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single-package'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docstring_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Google'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/generator.html#call_xsdata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.generator.call_xsdata" title="Permalink to this definition"></a></dt>
+<dd><p>Call xsdata subprocess to generate Python data bindings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The source URL or local file path of the XML schema.</p></li>
+<li><p><strong>package_name</strong> – The name of the package to generate.</p></li>
+<li><p><strong>version</strong> – The version of the package.</p></li>
+<li><p><strong>structure_style</strong> – The style of the generated package structure (default: “single-package”).</p></li>
+<li><p><strong>docstring_style</strong> – The style of the generated docstrings (default: “Google”).</p></li>
+<li><p><strong>stdout</strong> – Whether to print the output to stdout (default: False).</p></li>
+<li><p><strong>recursive</strong> – Whether to generate bindings for all imported schemas (default: True).</p></li>
+<li><p><strong>slots</strong> – Whether to generate classes with __slots__ (default: True).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>bool</em> – True if the xsdata generation is successful, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.generator.package_version">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.generator.</span></span><span class="sig-name descname"><span class="pre">package_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">major</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">micro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_pre_release</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/generator.html#package_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.generator.package_version" title="Permalink to this definition"></a></dt>
+<dd><p>Generate the databinding package name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The package name</p></li>
+<li><p><strong>major</strong> – Major version</p></li>
+<li><p><strong>minor</strong> – Minor version</p></li>
+<li><p><strong>micro</strong> – Micro version</p></li>
+<li><p><strong>pr1</strong> – Pre-release tag 1</p></li>
+<li><p><strong>pr2</strong> – Pre-release tag 2</p></li>
+<li><p><strong>is_pre_release</strong> – True if a pre-release, False otherwise</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The formatted package string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.generator.remove_module_imports">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.generator.</span></span><span class="sig-name descname"><span class="pre">remove_module_imports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_py</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/generator.html#remove_module_imports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.generator.remove_module_imports" title="Permalink to this definition"></a></dt>
+<dd><p>Remove module imports.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocx_databinding.generator.xsdata_generate">
+<span class="sig-prename descclassname"><span class="pre">ocx_databinding.generator.</span></span><span class="sig-name descname"><span class="pre">xsdata_generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">package</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure_style</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docstring_style</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ocx_databinding/generator.html#xsdata_generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ocx_databinding.generator.xsdata_generate" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Generate an xsdata command for generating Python classes from XML schema.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<em>str</em>) – The path to the XML schema file or directory.</p></li>
+<li><p><strong>package</strong> (<em>str</em>) – The Python package name for the generated classes.</p></li>
+<li><p><strong>slots</strong> (<em>bool</em>) – Whether to generate classes with __slots__.</p></li>
+<li><p><strong>recursive</strong> (<em>bool</em>) – Whether to generate classes recursively for imported schemas.</p></li>
+<li><p><strong>structure_style</strong> (<em>str</em>) – The style of generated class structure.</p></li>
+<li><p><strong>docstring_style</strong> (<em>str</em>) – The style of generated class docstrings.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>str</em> – The xsdata command for generating Python classes.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xsdata_generate</span><span class="p">(</span><span class="s2">&quot;schema.xsd&quot;</span><span class="p">,</span> <span class="s2">&quot;my_package&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;dataclass&quot;</span><span class="p">,</span> <span class="s2">&quot;google&quot;</span><span class="p">)</span>
+<span class="go">&#39;xsdata generate schema.xsd --package my_package --structure-style dataclass --docstring-style google --slots&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Contents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, 3Docx.org.
+      <span class="lastupdated">Last updated on Apr 16, 2024.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
