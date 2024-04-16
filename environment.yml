@@ -1,6 +1,6 @@
 # Minimal conda environment with python, pip and poetry and windows Make file support.
 # Dependencies are managed by Poetry
-name: databinding
+name: ocx-databinding
 channels:
   - conda-forge
   - msys2 # for m2-grep
@@ -9,7 +9,7 @@ channels:
   # be listed explicitly here.
   - nodefaults
 dependencies:
-  - python=3.10
+  - python=3.9
   - pip
   - poetry
   - m2w64-make # GNU mMake for windows

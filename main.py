@@ -19,10 +19,10 @@ def main(**kwargs: Any):
         # "source": "https://3docx.org/fileadmin/ocx_schema/unitsml/unitsmlSchema_lite-0.9.18.xsd",
         "source": "https://3docx.org/fileadmin//ocx_schema//V300b7//OCX_Schema.xsd",
         "package": "ocx",
-        "version": "3.0.0b7",
+        "version": "3.0.0rc7",
         "print": False,
         "recursive": False,
-        "slots": True,
+        "slots": False,
     }
     try:
         source = kwargs.pop("source")

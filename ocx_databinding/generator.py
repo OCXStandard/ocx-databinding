@@ -100,7 +100,7 @@ def call_xsdata(
     docstring_style: str = "Google",
     stdout: bool = False,
     recursive: bool = True,
-    slots: bool = True,
+    slots: bool = False,
 ) -> bool:
     """
     Call xsdata subprocess to generate Python data bindings.
