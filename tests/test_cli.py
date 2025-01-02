@@ -3,6 +3,7 @@
 from typer.testing import CliRunner
 from ocx_databinding.cli import databinding
 from ocx_databinding import __version__
+from conftest import SCHEMA_URL
 
 
 def test_version():
@@ -19,7 +20,7 @@ def test_help():
     assert result.exit_code == 0
 
 
-def test_generate(shared_datadir):
+def test_generate_from_file(shared_datadir):
     runner = CliRunner()
     source = shared_datadir / "unitsmlSchema_lite.xsd"
     package = "unitsml"
@@ -27,4 +28,13 @@ def test_generate(shared_datadir):
     result = runner.invoke(
         databinding, ["generate", str(source.resolve()), package, version]
     )
+    assert result.exit_code == 0
+
+
+def test_generate_from_url():
+    runner = CliRunner()
+    source = SCHEMA_URL
+    package = "ocx"
+    version = "3.0.0"
+    result = runner.invoke(databinding, ["generate", source, package, version])
     assert result.exit_code == 0

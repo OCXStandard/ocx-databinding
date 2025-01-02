@@ -9,30 +9,29 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "ocx_databinding"
-version = "2.7.1"
+version = "2.6.3"
 description = "Python CLI for managing OCX schema databinding and versioning according to PEP 440."
 authors = ["ocastrup <ole.christian.astrup@dnv.com>"]
 readme = "README.md"
 packages = [{include = "ocx_databinding"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-packaging = "^23.1"
-tbump = '*'
-xsdata = "23.8"
-lxml = "*"
-soap = "*"
+python = "^3.10"
 typer = "*"
 loguru = "*"
-sphinx = "<=6.2.1"
+
 
 [tool.poetry.group.development.dependencies]
 pre-commit = "*"
+setuptools = "*"
+tbump = '*'
+packaging = "*"
 
 [tool.poetry.group.test.dependencies]
 pytest = "*"
 pytest-cov = "*"
 pytest-regressions ="*"
+
 
 [tool.poetry.group.docs.dependencies]
 sphinx = "*"

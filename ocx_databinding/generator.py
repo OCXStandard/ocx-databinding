@@ -113,7 +113,7 @@ def call_xsdata(
         docstring_style: The style of the generated docstrings (default: "Google").
         stdout: Whether to print the output to stdout (default: False).
         recursive: Whether to generate bindings for all imported schemas (default: True).
-        slots: Whether to generate classes with __slots__ (default: True).
+        slots: Whether to generate classes with __slots__ (default: False).
 
     Returns:
         bool: True if the xsdata generation is successful, False otherwise.
@@ -164,7 +164,7 @@ def call_xsdata(
             init_py = destination_folder / "__init__.py"
             remove_module_imports(init_py)
             return True
-        except xsdata.exceptions.CodeGenerationError as e:
+        except xsdata.exceptions.ConverterError as e:
             logger.error(f"xsdata generate failed:  {e}")
             return False
     except packaging.version.InvalidVersion as e:
