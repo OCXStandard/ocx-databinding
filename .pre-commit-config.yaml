@@ -16,3 +16,12 @@ repos:
     rev: 6.1.0
     hooks:
       - id: flake8
+  - repo: local
+    hooks:
+    - id: pytest
+      name: pytest
+      entry: pytest tests
+      language: system
+      types: [python]
+      pass_filenames: false
+      always_run: true
