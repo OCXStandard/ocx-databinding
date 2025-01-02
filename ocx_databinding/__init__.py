@@ -2,5 +2,5 @@
 from loguru import logger
 
 logger.disable(__name__)
-__version__ = "2.7.1"
+__version__ = "2.6.3"
 __app_name__ = "ocx_databinding"

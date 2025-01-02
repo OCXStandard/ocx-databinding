@@ -48,7 +48,7 @@ databinding = "ocx_databinding.cli:main"
 github_url = "https://github.com/OCXStandard/ocx-databinding"
 
 [tool.tbump.version]
-current = "2.7.1"
+current = "2.6.3"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before
