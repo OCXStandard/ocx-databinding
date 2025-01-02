@@ -29,8 +29,8 @@ def package_version(
     major: int,
     minor: int,
     micro: int,
-    pr1: str,
-    pr2: str,
+    pr1: str = "",
+    pr2: str = "",
     is_pre_release: bool = False,
 ) -> str:
     """Generate the databinding package name.
