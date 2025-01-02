@@ -12,6 +12,7 @@ def test_generate_slots(shared_datadir):
         package_name=package,
         version=version,
         recursive=True,
+        slots=True,
     )
     assert result is True
 
@@ -25,6 +26,5 @@ def test_generate_no_slots(shared_datadir):
         package_name=package,
         version=version,
         recursive=True,
-        slots=False,
     )
     assert result is True

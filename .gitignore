@@ -2,6 +2,7 @@
 *.xml
 unitsml
 ocx_unitsml
+generated
 # Jetbrains
 .idea
 # Byte-compiled / optimized / DLL files

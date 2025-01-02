@@ -1,6 +1,12 @@
 # ocx-databinding: Changelog
 
 
+## [2.7.0] - 2025.01.02
+Bump to version [2.7.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.7.0)
+### Changed
+Bumped to xsdata v24.12
+Added test generate from url
+
 ## [2.6.3] - 2024.03.11
 Bump to version [2.6.3](https://github.com/OCXStandard/ocx-databinding/tree/v2.6.3)
 ### Changed
