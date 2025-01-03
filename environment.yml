@@ -9,7 +9,7 @@ channels:
   # be listed explicitly here.
   - nodefaults
 dependencies:
-  - python=3.10
+  - python=3.9
   - pip
   - poetry
   - m2w64-make # GNU mMake for windows

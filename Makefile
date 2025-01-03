@@ -3,7 +3,7 @@
 # from the environment for the first two.
 
 SOURCEDIR = ./ocx_databinding
-CONDA_ENV = databinding
+CONDA_ENV = ocx-databinding
 
 # PROJECT setup using conda and powershell
 .PHONY: conda-create

@@ -1,8 +1,13 @@
 # ocx-databinding: Changelog
 
 
-## [2.7.0] - 2025.01.02
-Bump to version [2.7.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.7.0)
+## [2.8.0] - 2025.01.03
+Bump to version [2.8.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.8.0)
+### Changed
+Downgraded from Python version 3.10 to version 3.9
+
+## [2.7.5] - 2025.01.02
+Bump to version [2.7.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.7.5)
 ### Changed
 Bumped to xsdata v24.12
 Added test generate from url
