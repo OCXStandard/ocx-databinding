@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from enum import Enum
+from xml_enum import Enum
 from typing import Optional, Union
 
 

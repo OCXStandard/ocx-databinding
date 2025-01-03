@@ -1,5 +1,6 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
 """Generate code from xml schemas, webservice definitions and any xml or json document."""
+
 # System imports
 from pathlib import Path
 import subprocess

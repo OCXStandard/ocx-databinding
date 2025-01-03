@@ -1,10 +1,25 @@
 # ocx-databinding: Changelog
 
+All notable changes to the OCX schema will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to the Python [PEP 440 versioning recommendations](https://peps.python.org/pep-0440/).
+
+### Types of changes
+* ``Added`` for new features.
+* ``Changed`` for changes in existing functionality.
+* ``Deprecated`` for soon-to-be removed features.
+* ``Removed`` for now removed features.
+* ``Fixed`` for any bug fixes.
+* ``Security`` in case of vulnerabilities.
+
+
 
 ## [2.8.0] - 2025.01.03
 Bump to version [2.8.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.8.0)
 ### Changed
-Downgraded from Python version 3.10 to version 3.9
+- Downgraded from Python version 3.10 to version 3.9
+- Replaced flake8 and Black with ruff linter and formatter in pre-commit hooks.
 
 ## [2.7.5] - 2025.01.02
 Bump to version [2.7.0](https://github.com/OCXStandard/ocx-databinding/tree/v2.7.5)

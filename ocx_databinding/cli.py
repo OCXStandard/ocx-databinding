@@ -1,5 +1,6 @@
 #  Copyright (c) 2023. OCX Consortium https://3docx.org. See the LICENSE
 """generator CLI commands."""
+
 # System imports
 from __future__ import annotations
 import sys
