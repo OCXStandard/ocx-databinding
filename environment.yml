@@ -11,6 +11,9 @@ channels:
 dependencies:
   - python=3.9
   - pip
-  - poetry
+  - m2w64-make # GNU mMake for windows
+  - m2-grep # Grep for windows. For Makefile sh
+  - m2-gawk # awk for windows. for Makefile sh
   - pip:
       - xsdata[cli,lxml, soap]  # xsdata with all dependencies
+      - poetry
